@@ -9,9 +9,12 @@ mongo=PyMongo(app)
 
 @app.route('/getguides', methods=['GET'])
 def  getguides():
+    
     guides=request.json['guides']
     shiiping=mongo.db.shippingOrders.find_one({"guides":guides})
     return str(shiiping)
+
+
 
 
 
